@@ -47,9 +47,11 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
   Animation? buttonSqueezeanimation;
   AnimationController? buttonController;
 
+
   @override
   void initState() {
     super.initState();
+
     getUserDetails();
     getSingature();
     // _onVerifyCode();
@@ -79,10 +81,10 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
   }
 
   getUserDetails() async {
-    SettingProvider settingsProvider =
-        Provider.of<SettingProvider>(context, listen: false);
-
+    SettingProvider settingsProvider = Provider.of<SettingProvider>(context, listen: false);
     if (mounted) setState(() {});
+    // otp = widget.otp.toString();
+    // setState(() {});
   }
 
   Future<void> checkNetworkOtp() async {
@@ -347,11 +349,11 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
                   fontWeight: FontWeight.normal),
             ),
           ),
-          Text("OTP ${widget.otp}",
-            style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                color: Theme.of(context).colorScheme.fontColor,
-                fontWeight: FontWeight.normal),
-          ),
+          // Text("OTP ${widget.otp}",
+          //   style: Theme.of(context).textTheme.subtitle1!.copyWith(
+          //       color: Theme.of(context).colorScheme.fontColor,
+          //       fontWeight: FontWeight.normal),
+          // ),
         ],
       ),
     );
@@ -371,7 +373,7 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
                       color: Theme.of(context).colorScheme.fontColor),
                   colorBuilder: FixedColorBuilder(colors.primary),
                 ),
-                currentCode: otp,
+                currentCode: widget.otp.toString(),
                 codeLength: 6,
                 onCodeChanged: (String? code) {
                   otp = code;
@@ -392,6 +394,7 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
             getTranslated(context, 'DIDNT_GET_THE_CODE')!,
             style: Theme.of(context).textTheme.caption!.copyWith(
                 color: Theme.of(context).colorScheme.fontColor,
+                fontSize: 15,
                 fontWeight: FontWeight.normal),
           ),
           InkWell(
@@ -402,10 +405,13 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
               child: Text(
                 getTranslated(context, 'RESEND_OTP')!,
                 style: Theme.of(context).textTheme.caption!.copyWith(
-                    color: Theme.of(context).colorScheme.fontColor,
+                    color: colors.primary,
+                    fontSize: 15,
                     decoration: TextDecoration.underline,
                     fontWeight: FontWeight.normal),
-              ))
+              ),
+          ),
+
         ],
       ),
     );

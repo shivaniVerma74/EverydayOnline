@@ -337,7 +337,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
     return widget.title == getTranslated(context, 'SEND_OTP_TITLE')
         ? Padding(
             padding: const EdgeInsets.only(
-                bottom: 30.0, left: 95.0, right: 25.0, top: 10.0),
+                bottom: 30.0, left: 70.0, right: 25.0, top: 10.0),
             child: Center(
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -345,6 +345,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                   Text(getTranslated(context, 'CONTINUE_AGREE_LBL')!,
                       style: Theme.of(context).textTheme.caption!.copyWith(
                           color: Theme.of(context).colorScheme.fontColor,
+                          fontSize: 15,
                           fontWeight: FontWeight.normal)),
                   SizedBox(width: 3.0),
                   InkWell(
@@ -353,7 +354,8 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                     },
                     child: Text(getTranslated(context, 'LOG_IN_LBL')!,
                         style: Theme.of(context).textTheme.caption!.copyWith(
-                            color: Theme.of(context).colorScheme.fontColor,
+                            color: colors.primary,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold)),
                   ),
                   // const SizedBox(

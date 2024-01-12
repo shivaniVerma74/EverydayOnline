@@ -483,6 +483,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
           Text(getTranslated(context, 'DONT_HAVE_AN_ACC')!,
               style: Theme.of(context).textTheme.caption!.copyWith(
                   color: Theme.of(context).colorScheme.fontColor,
+                  fontSize: 15,
                   fontWeight: FontWeight.normal)),
           InkWell(
               onTap: () {
@@ -495,9 +496,10 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
               child: Text(
                 getTranslated(context, 'SIGN_UP_LBL')!,
                 style: Theme.of(context).textTheme.caption!.copyWith(
-                    color: Theme.of(context).colorScheme.fontColor,
+                    color: colors.primary,
                     decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.normal),
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold),
               ))
         ],
       ),
